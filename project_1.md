@@ -1,11 +1,11 @@
-How many users do we have?
+### How many users do we have?
  - answer: 130
 ```sql
 SELECT count(distinct user_id) as user_cnt
 FROM dev_db.dbt_hyo02083webtoonscorpcom.stg_postgres__users
 ```
 
-On average, how many orders do we receive per hour?
+### On average, how many orders do we receive per hour?
 - answer: 2.03333
 ```sql
 SELECT 
@@ -15,7 +15,7 @@ WHERE order_id IS NOT NULL
     AND delivered_at IS NOT NULL 
 ```
 
-On average, how long does an order take from being placed to being delivered?
+### On average, how long does an order take from being placed to being delivered?
 - answer: 5604.196721 minute
 ```sql
 SELECT 
@@ -25,9 +25,10 @@ WHERE created_at IS NOT NULL
     AND delivered_at IS NOT NULL 
 ```
 
-How many users have only made one purchase? Two purchases? Three+ purchases?
+### How many users have only made one purchase? Two purchases? Three+ purchases?
 
-Note: you should consider a purchase to be a single order. In other words, if a user places one order for 3 products, they are considered to have made 1 purchase.
+>Note: you should consider a purchase to be a single order. In other words, if a user places one order for 3 products, they are considered to have made 1 purchase.
+
 - one purchase: 25
 - two purchase: 28
 - three+ purchase: 71
@@ -50,7 +51,7 @@ group by order_cnt_class
 order by order_cnt_class
 ```
 
-On average, how many unique sessions do we have per hour?
+### On average, how many unique sessions do we have per hour?
 - answer: 9.965517
 ```sql
 SELECT 
