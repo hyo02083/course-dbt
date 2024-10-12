@@ -1,0 +1,58 @@
+version: 2
+
+models:
+  - name: stg_postgres__addresses
+    description: addresses info
+    columns:
+      - name: address_id
+        tests:
+          - not_null
+
+  - name: stg_postgres__events
+    description: events info
+    columns:
+      - name: event_id
+        tests:
+          - not_null
+
+  - name: stg_postgres__order_items
+    description: order items info
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
+
+  - name: stg_postgres__orders
+    description: order info
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+
+  - name: stg_postgres__products
+    description: products info
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+
+  - name: stg_postgres__promos
+    description: promos info
+    columns:
+      - name: promo_id
+        tests:
+          - not_null
+
+  - name: stg_postgres__users
+    description: users info
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+
+
+
+
