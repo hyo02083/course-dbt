@@ -17,23 +17,16 @@ sources:
 
     tables: # this is where we define table metadata (name, description, load timestamps)
       - name: addresses 
-        description: >
-          addresses
+        description: addresses
       - name: users 
-        description: >
-          users
+        description: users
       - name: promos 
-        description: >
-          promos
+        description: promos
       - name: products 
-        description: >
-          products
+        description: products
       - name: orders 
-        description: >
-          orders
+        description: orders
       - name: order_items 
-        description: >
-          order_items
+        description: order_items
       - name: events 
-        description: >
-          events
+        description: events
