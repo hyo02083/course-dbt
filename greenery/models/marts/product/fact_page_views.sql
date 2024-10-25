@@ -12,12 +12,6 @@ session_timing_agg as (
     select * from {{ ref('int_session_timings')}}
 )
 
-{% set event_types = [
-    'page_view',
-    'add_to_cart',
-    'checkout',
-    'package_shipped',
-]  %}
 
 -- Returns a list of the payment_methods in the stg_payments model_
 {% set event_types = dbt_utils.get_column_values(
