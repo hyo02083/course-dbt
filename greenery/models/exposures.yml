@@ -1,0 +1,17 @@
+version: 2
+
+exposures:
+  - name: product_funnel
+    label: Product funnel of Greenery data
+    type: dashboard
+    maturity: hight
+    url: https://bi.tool/dashboards/1
+    description: >
+      This is dashboard shows product funnel for Greenery data
+
+    depends_on:
+      - ref('fact_page_views')
+    
+    owner:
+      name: Jieun Kim
+      email: hyo02083@gmail.com
