@@ -1,7 +1,7 @@
 # Part 1. dbt Snapshots
 
 ### 2) Which products had their inventory change from week 3 to week 4? 
-```
+```sql
 select 
     distinct product_id, name
 from dev_db.dbt_hyo02083webtoonscorpcom.products_snapshot
@@ -21,7 +21,7 @@ fb0e8be7-5ac4-4a76-a1fa-2cc4bf0b2d80	String of pearls
 ### 3-1) Now that we have 3 weeks of snapshot data, can you use the inventory changes to determine which products had the most fluctuations in inventory? 
 
 
-```
+```sql
 select
     name, count(*) as change_count
 from dev_db.dbt_hyo02083webtoonscorpcom.products_snapshot
@@ -40,7 +40,7 @@ ZZ Plant	3
 
 
 ### 3-2) Did we have any items go out of stock in the last 3 weeks? 
-```
+```sql
 select * 
 from dev_db.dbt_hyo02083webtoonscorpcom.products_snapshot
 where inventory = 0
@@ -55,7 +55,7 @@ fb0e8be7-5ac4-4a76-a1fa-2cc4bf0b2d80	String of pearls
 # Part 2. Modeling challenge
 
 ### How are our users moving through the product funnel?
-``` 
+``` sql
 WITH base AS (
     select 
         count(distinct case when page_views > 0 then session_id end) as page_views,
